@@ -1,15 +1,11 @@
 #Дана строка. Подсчитать общее количество содержащихся в ней строчных
 #латинских и русских букв.
 
-def count_lower_letters(s):
-    # Считаем только строчные буквы
-    lower_latin = 'abcdefghijklmnopqrstuvwxyz'
-    lower_russian = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя'
+s = "Hello! Привет! How are you? Как дела?"
 
-    count: int = 0
-    for char in s:
-        if (char in lower_latin) or (char in lower_russian):
-            count += 1
+latin_lower = sum(1 for c in s if 'a' <= c <= 'z')
+russian_lower = sum(1 for c in s if 'а' <= c <= 'я')
 
-    return count
- count_lower_letters(s)
+print(f"Латинских строчных: {latin_lower}")
+print(f"Русских строчных: {russian_lower}")
+print(f"Всего строчных: {latin_lower + russian_lower}")
