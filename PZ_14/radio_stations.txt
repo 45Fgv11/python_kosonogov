@@ -1,0 +1,3 @@
+http://stream.hoster.by:8081/pilotfm/audio/icecast.audio
+https://radio.example.com/stream
+http://test.domain.org:8000/music
