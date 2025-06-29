@@ -1,10 +1,11 @@
-#В двумерном списке найти минимальный элемент в предпоследней строке
+# В двумерном списке найти среднее арифметическое элементов последних двух
+# столбцов.
+import random
+from functools import reduce
+spisok = [[random.randint(1, 10) for i in range(4)] for i in range(4)]
+for i in spisok:
+    print(i)
+a = list(map(lambda x: sum(x[-2:]), spisok))
 
-import random as r
-
-matrix = [[r.randint(1, 10) for _ in range(3)] for _ in range(3)]
-
-pre_last_row = matrix[-2]
-min_element = min(pre_last_row)
-
-print(f"Минимальный элемент в предпоследней строке: {min_element}")
+b = reduce(lambda x,y: (x+y), a)
+print(b / (len(a) * 2))
